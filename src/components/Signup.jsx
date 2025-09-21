@@ -53,7 +53,7 @@ const Signup = () => {
             console.log("Creating user with data:", user);
 
             // First create the user account
-            const userResponse = await axios.post('http://localhost:8080/api/user/signup', user);
+            const userResponse = await axios.post('http://backend:8080/api/user/signup', user);
             console.log("User response:", userResponse.data);
 
             // If user is an author, add author details
@@ -70,7 +70,7 @@ const Signup = () => {
 
                 try {
                     // Updated endpoint to match the controller
-                    const authorResponse = await axios.post('http://localhost:8080/api/author/register', authorPayload);
+                    const authorResponse = await axios.post('http://backend:8080/api/author/register', authorPayload);
                     console.log("Author created successfully:", authorResponse.data);
                 } catch (authorError) {
                     console.error("Full author error:", authorError);
