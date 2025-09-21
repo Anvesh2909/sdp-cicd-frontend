@@ -7,7 +7,7 @@ const Profile = () => {
     const getAuthor = async () => {
 
       try {
-        const response = await axios.get("http://localhost:8080/api/author/get", {
+        const response = await axios.get("http://54.145.206.222:8080/api/author/get", {
           headers: { 'Authorization': "Bearer " + localStorage.getItem('token') }
         })
 

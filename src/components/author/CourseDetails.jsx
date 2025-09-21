@@ -17,7 +17,7 @@ const CourseDetails = () => {
 
             try {
                 let token = localStorage.getItem('token');
-                const response = await axios.get("http://54.234.194.193:8080/api/video/getAllVideos/" + params.cid, {
+                const response = await axios.get("http://54.145.206.222:8080/api/video/getAllVideos/" + params.cid, {
                     headers: { 'Authorization': 'Bearer ' + token }
                 });
                 // console.log(response);
@@ -50,7 +50,7 @@ const CourseDetails = () => {
         const getReviews = async () => {
             try {
                  let token = localStorage.getItem('token');
-                const response = await axios.get("http://54.234.194.193:8080/api/review/getReviewsByCourse/" + params.cid,{
+                const response = await axios.get("http://54.145.206.222:8080/api/review/getReviewsByCourse/" + params.cid,{
                     headers: { 'Authorization': 'Bearer ' + token }
                 })
                 console.log(response);
