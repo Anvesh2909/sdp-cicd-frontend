@@ -15,7 +15,7 @@ const Login = () => {
         const encodedString = window.btoa(username + ":" + password);
 
         try {
-            const response = await axios.get('http://backend:8080/api/user/token', {
+            const response = await axios.get('http://54.234.194.193:8080/api/user/token', {
                 headers: {
                     "Authorization": "Basic " + encodedString
                 }
@@ -26,7 +26,7 @@ const Login = () => {
 
             localStorage.setItem('token', token);
 
-            let details = await axios.get("http://backend:8080/api/user/details", {
+            let details = await axios.get("http://54.234.194.193:8080/api/user/details", {
                 headers: { "Authorization": "Bearer " + token }
             })
 
