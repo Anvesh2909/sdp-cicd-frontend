@@ -8,7 +8,7 @@ const EditProfile = () => {
         const formData = new FormData();
         formData.append("file", profile)
         try {
-            const response = await axios.post("http://localhost:8080/api/author/upload/profile-pic", formData,
+            const response = await axios.post("http://54.234.194.193:8080/api/author/upload/profile-pic", formData,
                 {
                     headers:
                         { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
@@ -22,7 +22,7 @@ const EditProfile = () => {
     useEffect(() => {
         const getAuthor = async () => {
             try {
-                const response = await axios.get("http://localhost:8080/api/author/get", {
+                const response = await axios.get("http://54.234.194.193:8080/api/author/get", {
                     headers: { 'Authorization': "Bearer " + localStorage.getItem('token') }
                 })
 

@@ -14,7 +14,7 @@ const Courses = () => {
         courseImage: ''
     });
 
-    const API_BASE_URL = "http://backend:8080/api/course";
+    const API_BASE_URL = "http://54.234.194.193:8080/api/course";
     const token = localStorage.getItem('token');
 
     useEffect(() => {
