@@ -24,7 +24,7 @@ const LearnerDashboard = () => {
                     return;
                 }
 
-                const response = await axios.get('http://54.145.206.222:8080/api/learner/courses', {
+                const response = await axios.get('http://54.173.153.82:8080/api/learner/courses', {
                     headers: { "Authorization": "Bearer " + token }
                 });
 
@@ -45,7 +45,7 @@ const LearnerDashboard = () => {
 
         setCoursesLoading(true);
         try {
-            const response = await axios.get('http://54.145.206.222:8080/api/course/getAll');
+            const response = await axios.get('http://54.173.153.82:8080/api/course/getAll');
             setAllCourses(response.data || []);
             setError('');
         } catch (error) {
@@ -61,14 +61,14 @@ const LearnerDashboard = () => {
 
         try {
             const response = await axios.post(
-                `http://54.145.206.222:8080/api/learner/enroll/${courseId}`,
+                `http://54.173.153.82:8080/api/learner/enroll/${courseId}`,
                 {},
                 { headers: { "Authorization": "Bearer " + token } }
             );
 
             if (response.status === 200) {
                 // Refresh enrolled courses
-                const enrolledResponse = await axios.get('http://54.145.206.222:8080/api/learner/courses', {
+                const enrolledResponse = await axios.get('http://54.173.153.82:8080/api/learner/courses', {
                     headers: { "Authorization": "Bearer " + token }
                 });
                 setEnrolledCourses(enrolledResponse.data || []);
