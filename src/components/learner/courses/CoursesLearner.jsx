@@ -26,7 +26,7 @@ const CoursesLearner = () => {
             setIsLoading(true);
             try {
                 // Fetch all available courses
-                const allCoursesResponse = await axios.get('http://54.173.153.82:8080/api/course/getAllCourses', {
+                const allCoursesResponse = await axios.get('http://18.208.212.21:8080/api/course/getAllCourses', {
                     headers: { "Authorization": "Bearer " + token }
                 });
 

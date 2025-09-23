@@ -14,7 +14,7 @@ const Login = () => {
     const login = async () => {
         try {
             // Step 1: Login with username/password to get JWT token
-            const loginResponse = await axios.post('http://54.173.153.82:8080/api/user/login', {
+            const loginResponse = await axios.post('http://18.208.212.21:8080/api/user/login', {
                 username: username,
                 password: password
             });
@@ -37,7 +37,7 @@ const Login = () => {
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
             // Step 4: Get user details using the JWT token
-            const detailsResponse = await axios.get("http://54.173.153.82:8080/api/user/details", {
+            const detailsResponse = await axios.get("http://18.208.212.21:8080/api/user/details", {
                 headers: {
                     "Authorization": "Bearer " + token
                 }
